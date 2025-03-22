@@ -5,14 +5,14 @@ const tableLimit = +tableLimitStr;
 let table = document.getElementById('multTable');
 
 for (let i = 1; i <= tableLimit; i++) {
-  let column = document.createElement('tr');
-  table.appendChild(column);
+  let row = document.createElement('tr');
+  table.appendChild(row);
   for (let y = 1; y <= tableLimit; y++) {
     let result = y * i;
-    let row = document.createElement('td');
+    let column = document.createElement('td');
     let textnode = document.createTextNode(result);
-    row.appendChild(textnode);
-    column.appendChild(row);
+    column.appendChild(textnode);
+    row.appendChild(column);
   }
-  document.getElementById('multTable').appendChild(column);
+  document.getElementById('multTable').appendChild(row);
 }
